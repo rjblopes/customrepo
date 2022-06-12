@@ -1,4 +1,4 @@
 node_modules/
-./**/node_modules
-./**/build
-./**/tsconfig.tsbuildinfo
+**/node_modules
+**/build
+**/tsconfig.tsbuildinfo
