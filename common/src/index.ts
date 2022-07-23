@@ -1,11 +1,13 @@
-import { myFn, myFn1, superFn } from '@customrepo/lib1'
-
 console.log('This is inside common')
 
-export function fn1(name:string):void {
-  console.log('This is the name: %s, %d', name, myFn(2))
+export function myFn(i:number): number {
+  return 10 * i
 }
 
-fn1('RicardoL')
-console.log(myFn1('Test'))
-console.log(superFn('Super', 99))
+export function myFn1(s:string): string {
+  return s + ' some other SUPER string'
+}
+
+export function superFn(s:string, n:number): string {
+  return s + 'some other and ' + n
+}
