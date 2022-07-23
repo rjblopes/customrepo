@@ -5,7 +5,7 @@ export function myFn(i:number): number {
 }
 
 export function myFn1(s:string): string {
-  return s + ' some other SUPER string'
+  return s + ' some other SUPER DUPER string'
 }
 
 export function superFn(s:string, n:number): string {

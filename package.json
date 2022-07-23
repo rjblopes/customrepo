@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -b",
+    "build:lib1": "tsc -b lib1",
+    "build:lib2": "tsc -b lib2",
+    "watch": "tsc -b --watch",
+    "watch:lib1": "tsc -b --watch -w lib1",
+    "watch:lib2": "tsc -b --watch -w lib2",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc -b --watch"
+    "start:lib2": "npm run start -w @customrepo/lib2"
   },
   "author": "",
   "license": "ISC",
