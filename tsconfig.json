@@ -103,10 +103,10 @@
   ],
   "references": [
     {
-      "path": "./common"
+      "path": "common"
     },
     {
-      "path": "./lib1"
+      "path": "lib1"
     }
   ]
 }
