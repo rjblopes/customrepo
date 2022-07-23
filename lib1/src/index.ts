@@ -6,5 +6,5 @@ export function fn1(name:string):void {
 }
 
 fn1('RicardoL')
-console.log(myFn1('Test'))
+console.log(myFn1('Master'))
 console.log(superFn('Super', 99))
