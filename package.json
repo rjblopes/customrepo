@@ -11,14 +11,20 @@
     "watch:lib1": "tsc -b --watch -w lib1",
     "watch:lib2": "tsc -b --watch -w lib2",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:lib2": "npm run start -w @customrepo/lib2"
+    "start": "npm run start -w @customrepo/lib1 -w @customrepo/lib2",
+    "start:lib1": "npm run start -w @customrepo/lib1",
+    "start:lib2": "npm run start -w @customrepo/lib2",
+    "dev": "npm run dev -w @customrepo/lib1 -w @customrepo/lib2",
+    "dev:lib1": "npm run dev -w @customrepo/lib1",
+    "dev:lib2": "npm run dev -w @customrepo/lib2"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.42",
     "ts-node": "^10.8.1",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.3",
+    "nodemon": "^2.0.19"
   },
   "workspaces": [
     "common",

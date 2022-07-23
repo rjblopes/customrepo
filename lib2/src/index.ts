@@ -7,4 +7,4 @@ export function fn1(name:string):void {
 
 fn1('Batatas Fritas')
 console.log(myFn1('Test'))
-console.log(superFn('Super', 99))
+console.log(superFn('Super', 200))
