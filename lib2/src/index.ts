@@ -5,6 +5,6 @@ export function fn1(name:string):void {
   console.log('This is the name: %s, %d', name, myFn(2))
 }
 
-fn1('Batatas Fritas')
-console.log(myFn1('Test'))
-console.log(superFn('Super', 200))
+fn1('Batatas')
+console.log(myFn1('Mega-Test'))
+console.log(superFn('Super Mega', 200))
