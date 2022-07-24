@@ -5,16 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -b",
-    "build:lib1": "tsc -b lib1",
-    "build:lib2": "tsc -b lib2",
-    "watch": "tsc -b --watch",
-    "watch:lib1": "tsc -b --watch -w lib1",
-    "watch:lib2": "tsc -b --watch -w lib2",
+    "build:watch": "tsc -b --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run start -w @customrepo/lib1 -w @customrepo/lib2",
     "start:lib1": "npm run start -w @customrepo/lib1",
     "start:lib2": "npm run start -w @customrepo/lib2",
-    "dev": "npm run dev -w @customrepo/lib1 -w @customrepo/lib2",
     "dev:lib1": "npm run dev -w @customrepo/lib1",
     "dev:lib2": "npm run dev -w @customrepo/lib2"
   },
