@@ -1,0 +1,38 @@
+version: 2.1
+
+x-remote_docker: &remote_docker
+  setup_remote_docker:
+    version: 20.10.2
+
+executors:
+  small:
+    docker:
+      - image: cimg/base:stable
+    resource_class: small
+
+jobs:
+  build_lib1:
+    executor: small
+    steps:
+      - checkout
+      - <<: *remote_docker
+      - run:
+        name: Build Image
+        command: |
+          docker build \
+          -f lib1/Dockerfile \
+          -t customrepo/lib1:${CIRCLE_TAG:-latest} \
+          .
+   
+  build_lib2:
+    executor: small
+    steps:
+      - checkout
+      - <<: *remote_docker
+      - run:
+        name: Build Image
+        command: |
+          docker build \
+          -f lib2/Dockerfile \
+          -t customrepo/lib2:${CIRCLE_TAG:-latest} \
+          .
