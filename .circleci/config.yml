@@ -36,3 +36,17 @@ jobs:
           -f lib2/Dockerfile \
           -t customrepo/lib2:${CIRCLE_TAG:-latest} \
           .
+
+x-run_on_main_only: &run_on_main_only
+  filters:
+    branches:
+      only: main
+
+workflows:
+  version: 2
+  standard:
+    jobs:
+      - build_lib1:
+        <<: *run_on_main_only
+      - build_lib2:
+        <<: *run_on_main_only
