@@ -24,6 +24,11 @@ jobs:
             -f lib1/Dockerfile \
             -t customrepo/lib1:${CIRCLE_TAG:-latest} \
             .
+      - run:
+          name: Save Docker image
+          command: docker save -o customrepo-lib1.tar customrepo/lib1:${CIRCLE_TAG:-latest}
+      - store_artifacts:
+        path: ./customrepo-lib1.tar
    
   build_lib2:
     executor: small
@@ -37,6 +42,11 @@ jobs:
             -f lib2/Dockerfile \
             -t customrepo/lib2:${CIRCLE_TAG:-latest} \
             .
+      - run:
+          name: Save Docker image
+          command: docker save -o customrepo-lib2.tar customrepo/lib2:${CIRCLE_TAG:-latest}
+      - store_artifacts:
+        path: ./customrepo-lib2.tar
 
 x-run_on_main_only: &run_on_main_only
   filters:
