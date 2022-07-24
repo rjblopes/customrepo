@@ -17,12 +17,12 @@ jobs:
       - checkout
       - <<: *remote_docker
       - run:
-        name: Build Image
-        command: |
-          docker build \
-          -f lib1/Dockerfile \
-          -t customrepo/lib1:${CIRCLE_TAG:-latest} \
-          .
+          name: Build Image
+          command: |
+            docker build \
+            -f lib1/Dockerfile \
+            -t customrepo/lib1:${CIRCLE_TAG:-latest} \
+            .
    
   build_lib2:
     executor: small
@@ -30,12 +30,12 @@ jobs:
       - checkout
       - <<: *remote_docker
       - run:
-        name: Build Image
-        command: |
-          docker build \
-          -f lib2/Dockerfile \
-          -t customrepo/lib2:${CIRCLE_TAG:-latest} \
-          .
+          name: Build Image
+          command: |
+            docker build \
+            -f lib2/Dockerfile \
+            -t customrepo/lib2:${CIRCLE_TAG:-latest} \
+            .
 
 x-run_on_main_only: &run_on_main_only
   filters:
