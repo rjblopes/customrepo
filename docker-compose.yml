@@ -4,7 +4,7 @@ services:
   lib1:
     hostname: cr-lib1
     container_name: customrepo_lib1
-    image: customrepo-lib1:${TAG:-latest}
+    image: customrepo/lib1:${TAG:-latest}
     build:
       context: .
       dockerfile: ./lib1/Dockerfile
@@ -12,7 +12,7 @@ services:
   lib2:
     hostname: cr-lib2
     container_name: customrepo_lib2
-    image: customrepo-lib2:${TAG:-latest}
+    image: customrepo/lib2:${TAG:-latest}
     build:
       context: .
       dockerfile: ./lib2/Dockerfile
