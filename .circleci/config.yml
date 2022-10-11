@@ -29,6 +29,7 @@ jobs:
           command: docker save -o customrepo-lib1.tar customrepo/lib1:${CIRCLE_TAG:-latest}
       - store_artifacts:
           path: ./customrepo-lib1.tar
+      - run: echo "******* Images " & docker images ls
    
   build_lib2:
     executor: small
