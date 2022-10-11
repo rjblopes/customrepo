@@ -62,6 +62,8 @@ x-run_on_main_only: &run_on_main_only
   filters:
     branches:
       only: main
+    tags:
+      only: /.*/
 
 workflows:
   version: 2
