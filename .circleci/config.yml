@@ -29,7 +29,16 @@ jobs:
           command: docker save -o customrepo-lib1.tar customrepo/lib1:${CIRCLE_TAG:-latest}
       - store_artifacts:
           path: ./customrepo-lib1.tar
-      - run: echo "******* Images " & docker images ls
+      - run: echo "******* Images " & docker images
+
+  test_dlc:
+    executor: small
+    steps:
+      - checkout
+      - <<: *remote_docker
+      - run:
+          name: Test DLC
+          command: docker images
    
   build_lib2:
     executor: small
@@ -59,6 +68,10 @@ workflows:
   standard:
     jobs:
       - build_lib1:
-        <<: *run_on_main_only
+          <<: *run_on_main_only
+      - test_dlc:
+          <<: *run_on_main_only
+          requires:
+            - build_lib1
       - build_lib2:
-        <<: *run_on_main_only
+          <<: *run_on_main_only
