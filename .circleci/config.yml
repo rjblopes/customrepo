@@ -39,6 +39,9 @@ jobs:
       - run:
           name: Test DLC
           command: docker images
+      - run:
+          name: Tag Images
+          command: docker tag customrepo/lib1:latest customrepo/lib1:cenas
    
   build_lib2:
     executor: small
