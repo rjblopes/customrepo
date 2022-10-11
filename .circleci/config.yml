@@ -40,8 +40,11 @@ jobs:
           name: Test DLC
           command: docker images
       - run:
+          name: Load images
+          command: docker load -i ./customrepo-lib1.tar
+      - run:
           name: Tag Images
-          command: docker pull customrepo/lib1:latest && docker tag customrepo/lib1:latest customrepo/lib1:cenas
+          command: docker tag customrepo/lib1:latest customrepo/lib1:cenas
    
   build_lib2:
     executor: small
